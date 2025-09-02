@@ -1,0 +1,64 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Harmonic Motion Simulation</title>
+    <link rel="stylesheet" href="style_shm.css">
+</head>
+<body>
+    <header>
+        <h1>Simple Harmonic Motion Simulation</h1>
+        <nav>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Explore Oscillations!</h2>
+        <p>Observe the classic mass-spring system in simple harmonic motion. Adjust the mass, spring constant, and initial displacement to see how they affect the oscillation's period and amplitude. A real-time graph of displacement over time will help you visualize the periodic motion.</p>
+
+        <div class="controls">
+            <label for="mass">Mass (kg):</label>
+            <input type="range" id="mass" min="0.1" max="5.0" step="0.1" value="1.0">
+            <span id="massValue">1.0</span> kg<br>
+
+            <label for="springConstant">Spring Constant (N/m):</label>
+            <input type="range" id="springConstant" min="1" max="100" step="1" value="20">
+            <span id="springConstantValue">20</span> N/m<br>
+
+            <label for="initialAmplitude">Initial Displacement (m):</label>
+            <input type="range" id="initialAmplitude" min="0.1" max="2.0" step="0.1" value="1.0">
+            <span id="initialAmplitudeValue">1.0</span> m<br>
+
+            <button id="startSimulation">Start Simulation</button>
+            <button id="resetSimulation">Reset</button>
+        </div>
+
+        <div class="canvas-container">
+            <canvas id="shmSimulationCanvas" width="900" height="300" style="border:1px solid #ccc; background-color: #f8f8f8;"></canvas>
+            <canvas id="shmGraphCanvas" width="900" height="250" style="border:1px solid #ccc; background-color: #f8f8f8; margin-top: 20px;"></canvas>
+        </div>
+
+
+        <section class="explanation">
+            <h2>Physics Behind Simple Harmonic Motion</h2>
+            <p>Simple Harmonic Motion (SHM) is a special type of periodic motion where the restoring force is directly proportional to the displacement and acts in the opposite direction. A mass attached to a spring is a classic example.</p>
+            <p>Key Concepts and Equations:</p>
+            <ul>
+                <li>*Restoring Force (Hooke's Law):* $F = -kx$, where $k$ is the spring constant and $x$ is the displacement from equilibrium.</li>
+                <li>*Angular Frequency ($\omega$):* $\omega = \sqrt{\frac{k}{m}}$, where $m$ is the mass.</li>
+                <li>*Period ($T$):* The time for one complete oscillation. $T = \frac{2\pi}{\omega} = 2\pi\sqrt{\frac{m}{k}}$.</li>
+                <li>*Displacement ($x(t)$):* If starting from maximum positive displacement at $t=0$, $x(t) = A \cos(\omega t)$, where $A$ is the amplitude.</li>
+                <li>*Amplitude ($A$):* The maximum displacement from the equilibrium position.</li>
+            </ul>
+            <p>In this simulation, we consider an ideal spring and negligible friction.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Physics Simulations. All rights reserved.</p>
+    </footer>
+
+    <script src="shm-simulation.js"></script>
+</body>
+</html>
